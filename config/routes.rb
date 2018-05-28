@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   get "tasks", to: "tasks#index"
   # to create a new task
   get "tasks/new", to: "tasks#new", as: :new_task
-  post "tasks", to: "tasks#create", as: :task
-  # to show one task
-  get "tasks/:id", to: "tasks#show" 
+  post "tasks", to: "tasks#create"
   # to update a new task
   get "tasks/:id/edit", to: "tasks#edit", as: :edit_task
   patch "tasks/:id", to: "tasks#update"
 
+  # to show one task
+  get "tasks/:id", to: "tasks#show", as: :task
   # to destroy a task
   delete "tasks/:id", to: "tasks#destroy"
 end
